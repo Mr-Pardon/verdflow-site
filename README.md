@@ -2,6 +2,10 @@
 
 VerdFlow 的独立官网与中文使用指南。产品源码、ADR 与内部验证记录仍由 VerdFlow 产品仓库维护。
 
+[在线站点](https://mr-pardon.github.io/verdflow-site/) ·
+[文档反馈](https://github.com/Mr-Pardon/verdflow-site/issues) ·
+[部署状态](https://github.com/Mr-Pardon/verdflow-site/actions/workflows/pages.yml)
+
 当前手册核对基线为 VerdFlow `0.3.1` 主分支源码（`f454493`，2026-10-20 核对）。
 最近已核验的本地便携包与标签为 `v0.3.0`，不将源码版本当作公开下载状态。
 `docs/strategies/` 介绍层次生态群落 2.2.2、草坪点景组团 1.0.2、通用行道树 2.0.2。
@@ -109,6 +113,9 @@ npm run test:build
 | `RELEASE_URL` | 已核验的客户端发布页面，未填写时展示内测获取说明 |
 | `SITE_BASE` | 覆盖部署 base，默认从仓库名推导 |
 
-本站已整理本地 Git 基线，尚未设置 GitHub remote 或对外部署。发布前核对版本、素材授权、
-下载地址和截图，详见 `CONTENT_GUIDE.md` 与 [发布前检查清单](./RELEASE_CHECKLIST.md)。
+公开仓库为 [Mr-Pardon/verdflow-site](https://github.com/Mr-Pardon/verdflow-site)，默认站点地址为
+`https://mr-pardon.github.io/verdflow-site/`，暂不使用自定义域名。`main` 推送后自动构建部署，
+每次运行结果见上方部署状态；客户端发布链接暂留空，文档上线不代表软件已公开发行。
+后续发布继续核对版本、素材、下载地址和截图，详见 `CONTENT_GUIDE.md` 与
+[发布检查清单](./RELEASE_CHECKLIST.md)。
 GitHub Actions 在上传 Pages 产物前也执行生产浏览器回归；失败不会进入部署步骤。

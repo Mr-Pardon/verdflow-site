@@ -20,7 +20,22 @@
 | 本地最近标签 / 客户端便携包 | v0.3.0；尚未见 v0.3.1 标签或便携包 |
 | 本地 0.3.1 源码归档 | 已存在；不等于 Windows 客户端已打包或 GitHub 已发布 |
 | 维护策略 | 层次生态群落 2.2.2、草坪点景组团 1.0.2、通用行道树 2.0.2 |
-| 网站 Git | 2026-10-21 整理本地 main 首次提交基线；尚未配置 remote、推送或部署 |
+| 网站 Git | 首次基线 `33b0e9c` 已推送至公开仓库 `Mr-Pardon/verdflow-site`；Pages 使用 GitHub Actions |
+
+## 2026-10-21 发布配置
+
+用户已确认公开仓库 `Mr-Pardon/verdflow-site`，使用默认 Pages 地址，后续再考虑自定义域名。
+
+- 站点：[mr-pardon.github.io/verdflow-site](https://mr-pardon.github.io/verdflow-site/)
+- 仓库：[Mr-Pardon/verdflow-site](https://github.com/Mr-Pardon/verdflow-site)
+- 构建与部署：[Publish VerdFlow Site](https://github.com/Mr-Pardon/verdflow-site/actions/workflows/pages.yml)
+- 文档反馈：[站点 Issues](https://github.com/Mr-Pardon/verdflow-site/issues)
+- 发布源为 GitHub Actions，HTTPS 已启用，无自定义域名；`SITE_BASE` 使用仓库名自动推导。
+- `RELEASE_URL` 保持未配置，客户端首发版本与下载仍待后续确认；练习数据不阻塞文档上线。
+
+用户明确要求按当前站点继续公开发布。现有截图原样保留，后续素材调整由用户自行评估；
+这不表示本站已代为核验第三方素材权利。下面的素材建议保留为后续维护事项。
+云端构建、浏览器回归和部署结果以链接中的实际 Actions 记录为准。
 
 ## 已修正的内容
 
@@ -67,10 +82,10 @@
 
 ### 3. 仓库、许可与反馈
 
-- [ ] 确认独立站点仓库的 owner、名称和可见性，建议继续使用 `verdflow-site`。
+- [x] 确认并创建独立公开站点仓库 `Mr-Pardon/verdflow-site`。
 - [x] 确定网站代码、文档文字与图像的许可范围，并添加正式许可及站点入口：MIT / CC BY 4.0，品牌和媒体另行说明。
 - [x] 首次提交前审查文件清单：依赖、构建输出、验证截图、临时 ZIP 与 `.work/` 已排除；截图公开范围仍按上节单独确认。
-- [ ] 明确反馈入口，优先真实产品仓库 Issues / Discussions；未确定前不创建占位链接。
+- [x] README 提供站点仓库 Issues 作为文档反馈入口；产品问题入口待产品正式发布后补充。
 
 2026-10-20 已确认并采用的许可方案：
 
@@ -89,11 +104,8 @@ CC BY 4.0 使用 Creative Commons 官方原文；许可方案确认不代表截�
 
 2026-10-21 本地基线检查：公开源码不再写死作者本机的项目路径；文本扫描未发现常见
 凭据格式。已提交的页面图片仍保留用户提供的内容，未做裁切或模糊，待用户决定公开范围。
-发布工作流对齐官方当前的 `upload-pages-artifact@v4`，实际 GitHub Actions 执行仍待远程仓库就绪。
-
-下一步只需确定站点仓库归属、名称与可见性，以及首次是否使用默认 Pages 域名。
-推荐先使用独立公开仓库 `verdflow-site` 和项目 Pages 路径，文档反馈使用该仓库 Issues。
-客户端首发版本、软件下载地址、自定义域名和练习数据可以后续补充；下载变量暂留空。
+发布工作流对齐官方当前的 `upload-pages-artifact@v4`，远程仓库与 Pages 已按上节配置。
+客户端首发版本、软件下载地址、自定义域名和练习数据后续补充；下载变量暂留空。
 
 ### 4. 工具链安全
 
@@ -148,8 +160,9 @@ npm run build
 
 本轮已通过内容检查、生产构建，以及 `/` 和 `/verdflow-site/` 两种路径的生产浏览器回归：
 遍历内容页，检查内部页面与锚点、图片、品牌资源、搜索、404 返回入口与下载状态，
-并在 1440、1024、390、360 像素宽度检查关键页面和交互。尚未执行实际 GitHub Actions
-部署，也未使用交付客户端重新验证三条种植路线。
+并在 1440、1024、390、360 像素宽度检查关键页面和交互。2026-10-21 已再次通过仓库自动
+推导的 `/verdflow-site/` 构建与生产浏览器回归，云端部署结果见上方 Actions。
+尚未使用交付客户端重新验证三条种植路线。
 
 配置依据：[GitHub 自定义 Pages 工作流](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages)、
 [VitePress 部署指南](https://vitepress.dev/guide/deploy#github-pages)。以本站锁定的 VitePress 1.6.4 实测为准，
