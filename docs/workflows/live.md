@@ -2,11 +2,18 @@
 title: DTS 实时种植
 ---
 
+<script setup>
+import { withBase } from 'vitepress';
+import { ArrowUpRight, Play } from '@lucide/vue';
+</script>
+
 <span class="doc-eyebrow">WORKFLOW 01 · LIVE</span>
 
 # DTS 实时种植
 
 <p class="lead">直接在已有 DTS 场景里选区，生成植被并写入场景。</p>
+
+<a class="guide-demo-link" :href="withBase('/demo.html')" target="_self"><Play :size="16" aria-hidden="true" />先看完整演示 · 49 秒<ArrowUpRight :size="16" aria-hidden="true" /></a>
 
 ## 1. 连接目标场景
 

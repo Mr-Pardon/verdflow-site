@@ -131,6 +131,9 @@ button,a { touch-action: manipulation; }
 .vp-doc .custom-block { border-radius: 5px; }
 .vp-doc .custom-block p { font-size: 14px; }
 .lead { color: #657d6e; font-size: 17px !important; line-height: 1.9 !important; margin: 20px 0 30px !important; }
+.vp-doc .guide-demo-link { display: inline-flex; align-items: center; flex-wrap: wrap; gap: 9px; color: #276853; font-size: 14px; font-weight: 500; text-decoration: none; padding: 0 0 5px; }
+.vp-doc .guide-demo-link:hover { text-decoration: underline; text-underline-offset: 5px; }
+.guide-demo-link svg { flex-shrink: 0; }
 .doc-eyebrow { display: inline-flex; align-items: center; gap: 8px; color: #67917a; font-size: 11px; font-weight: 600; margin-bottom: 15px; }
 .doc-eyebrow:before { content: ''; width: 20px; height: 1px; background: #82a68b; }
 .guide-links { display: grid; gap: 0; border-top: 1px solid #e0e8e1; margin: 26px 0; }

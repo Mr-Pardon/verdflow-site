@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, nextTick } from 'vue';
 import { withBase } from 'vitepress';
-import { ArrowRight, ArrowUpRight, Layers, Trees, SlidersHorizontal, Download, BookOpen, Check, Box, Shuffle, ScanLine, Workflow } from '@lucide/vue';
+import { ArrowRight, ArrowUpRight, Layers, Trees, SlidersHorizontal, Download, Play, Check, Box, Shuffle, ScanLine, Workflow } from '@lucide/vue';
 
 const activeStep = ref(0);
 async function moveStep(direction: number) {
@@ -27,7 +27,7 @@ const steps = [
         <p>连接区域数据、种植策略与植被搭配。<br />把一片绿地，变成可预览、可调整的种植方案。</p>
         <div class="hero-actions">
           <a class="site-button light" :href="withBase('/guide/start.html')">开始第一次种植<ArrowUpRight :size="18" /></a>
-          <a class="hero-text-link" :href="withBase('/manual/overview.html')"><BookOpen :size="17" />阅读用户手册</a>
+          <a class="hero-text-link" :href="withBase('/demo.html')"><Play :size="17" aria-hidden="true" />观看演示</a>
         </div>
         <div class="hero-meta"><span>Windows 桌面内测</span><span>DTS 场景工作流</span><span>手册 0.3.1</span></div>
       </div>

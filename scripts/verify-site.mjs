@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { mkdir, readdir } from 'node:fs/promises';
 import { chromium } from 'playwright';
 import { fileURLToPath } from 'node:url';
+import { verifyDemo } from './verify-demo.mjs';
 
 const base = (process.env.SITE_URL || 'http://127.0.0.1:4180/').replace(/\/?$/, '/');
 const output = new URL('../verification/', import.meta.url);
@@ -91,6 +92,12 @@ try {
   await page.locator('dialog[open]').waitFor();
   await page.keyboard.press('Escape');
   assert.equal(await page.locator('dialog[open]').count(), 0);
+  const demoLink = page.getByRole('link', { name: '观看演示', exact: true });
+  assert.equal(await demoLink.getAttribute('href'), new URL('demo.html', base).pathname);
+  await demoLink.click();
+  await page.getByRole('heading', { name: '看见 VerdFlow', exact: true }).waitFor();
+  await verifyDemo({ page, base, shot, overflow, exercise: true });
+  await page.goto(base);
   await page.getByRole('link', { name: '开始第一次种植' }).click();
   await page.getByRole('heading', { level: 1, name: '选择你的上手路线' }).waitFor();
   await overflow(); await shot('guide-desktop');
@@ -182,6 +189,7 @@ try {
     await page.setViewportSize({ width, height });
     await page.goto(base); await images(); await overflow(); await brand();
     await shot(`home-${width}`);
+    await verifyDemo({ page, base, shot, overflow, exercise: width === 390 });
     await page.goto(new URL('authoring/architecture.html', base).href);
     await page.locator('.workflow-architecture').waitFor();
     await overflow(); await shot(`architecture-${width}`);
@@ -246,5 +254,5 @@ try {
   }
   assert.deepEqual(broken, []);
   assert.deepEqual(errors, []);
-  console.log(JSON.stringify({ passed: true, base, articles: pageCount, viewports: [1440, 1024, 390, 360], tested: ['navigation', 'all articles', 'internal page and section links', 'brand and favicons', 'licensing notices and canonical text', 'images', 'workflow image references and order', 'collapsible strategy navigation', 'strategy diagrams', 'parameter preset illustrations', 'keyboard tabs', 'lightbox', 'local search', 'mobile menu', 'sidebar', 'overflow', '404 recovery', 'honest downloads'], output: output.pathname }, null, 2));
+  console.log(JSON.stringify({ passed: true, base, articles: pageCount, viewports: [1440, 1024, 390, 360], tested: ['navigation', 'all articles', 'internal page and section links', 'brand and favicons', 'licensing notices and canonical text', 'images', 'demo lazy loading, keyboard playback, seek, decoded frame, fullscreen, replay and retry', 'workflow image references and order', 'collapsible strategy navigation', 'strategy diagrams', 'parameter preset illustrations', 'keyboard tabs', 'lightbox', 'local search', 'mobile menu', 'sidebar', 'overflow', '404 recovery', 'honest downloads'], output: output.pathname }, null, 2));
 } finally { await browser.close(); }
