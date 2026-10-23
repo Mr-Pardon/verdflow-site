@@ -47,4 +47,4 @@ description: 按操作目标浏览 VerdFlow 的种植、资源管理与输出指
 
 [输入数据检查](../reference/data.md)用于排除格式与坐标问题；[常见问题](../reference/troubleshooting.md)按症状提供排查顺序；[备份与更新](../reference/backup.md)说明用户数据与项目数据的区别。
 
-<div class="version-note">本指南于 2026-10-20 对照 0.3.1 源码更新；目前已核验的最近本地便携包为 0.3.0。部分流程截图来自旧版，以正文和新版配图为准。版本、包与公开下载状态见更新说明。</div>
+<div class="version-note">本手册适用于 VerdFlow 1.0.0。策略、资产库与种植方案各自管理版本，使用前请核对资源说明与依赖；版本能力与升级说明见更新说明。</div>

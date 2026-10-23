@@ -19,6 +19,11 @@ button,a { touch-action: manipulation; }
 .VPNavBarTitle .logo { width: 166px; height: auto; max-width: 100%; margin-right: 0; object-fit: contain; }
 .VPNavBarMenuLink, .VPNavBarMenuGroup .button { font-size: 14px !important; }
 .VPNavBarSearch .DocSearch-Button { border-radius: 5px; background: #f4f7f5; }
+@media (min-width: 768px) and (max-width: 959px) {
+  .VPNavBarMenu,.VPNavBarExtra { display: none !important; }
+  .VPNavBarHamburger { display: flex !important; }
+  .VPNavScreen { display: block !important; }
+}
 .VPHome { margin-bottom: 0 !important; padding-bottom: 0 !important; }
 .VPFooter { padding: 30px 24px !important; background: #f7f9f7; }
 .VPFooter .message { color: #53685d; font-size: 13px; }

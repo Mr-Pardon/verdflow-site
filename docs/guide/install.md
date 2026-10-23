@@ -10,21 +10,22 @@ title: 安装与准备
 
 ## 获取与启动
 
-当前通过内测渠道获取 Windows 便携包。正式开源后，本站会接入真实的 GitHub Releases 下载入口，见[获取 VerdFlow](../download.md)。
+本指南适用于 **VerdFlow 1.0.0 Windows x64 便携版**。从 [GitHub Releases](https://github.com/Mr-Pardon/VerdFlow/releases)获取软件，策略与资产资源从 [VerdFlow 资源中心](https://mr-pardon.github.io/verdflow-resources/)获取。
 
-1. 将完整 ZIP 解压到一个可读写的目录，不要直接在压缩包内运行。
-2. 在 Windows x64 环境中打开解压目录的 **VerdFlow Studio.exe**。
-3. 等待顶栏显示本地服务正常，再进入工作台或资源管理。
+1. 在 Releases 中打开 **1.0.0** 发布页，从 **Assets** 下载 Windows x64 便携包 ZIP。
+2. 将完整 ZIP 解压到一个可读写的目录，不要直接在压缩包内运行。
+3. 打开解压目录中的 **VerdFlow Studio.exe**，无需额外安装。
+4. 等待顶栏显示本地服务正常，再进入工作台或资源管理。
 
 用户数据保存在 `%LOCALAPPDATA%\VerdFlow`，种植项目则保存在你创建项目时选择的目录。软件解压目录不是项目备份目录。
 
-当前已核验的便携包未签名，Windows 可能显示未知发布者提醒。先核对获取来源；交付方提供 SHA-256 时对照校验，不要通过关闭系统防护来解决来源不明的文件警告。
+下载后可按发布说明中的 SHA-256 校验文件。Windows 若显示未知发布者提醒，先核对获取来源与文件校验结果，不要通过关闭系统防护来解决来源不明的文件警告。
 
 ## 按路线准备工具
 
 | 路线 | 必需准备 | 不必为此配置 |
 | --- | --- | --- |
-| DTS 实时种植 | 可用的 DTS Explorer 场景，以及实时连接配置 | FBX、GeoTIFF |
+| DTS 实时种植 | DTS Explorer 7.1.0730 及之后版本、可用场景与实时连接配置 | FBX、GeoTIFF |
 | FBX 模型种植 | FBX 文件、可用的 Blender 程序路径 | 在线模型服务不是必需项 |
 | 地理空间种植 | SHP / GeoJSON 面和 GeoTIFF 高程 | Blender 模型导入 |
 
@@ -67,11 +68,15 @@ Explorer 根目录/
 
 ## 先准备一套资源
 
+前往 [VerdFlow 资源中心](https://mr-pardon.github.io/verdflow-resources/)查找种植策略、资产库和种植方案。先阅读资源的用途、版本与依赖说明，再下载需要的资源包；使用种植方案时，也要准备它所依赖的策略和资产。
+
+下载完成后，回到 Studio 按以下顺序导入：
+
 1. 在策略库导入 `.vfs` 策略包，审阅来源并确认信任。
 2. 在资产库导入 `.vfa`，或新建资产库并录入目标模型名称。
 3. 在 **快捷种植 → 种植方案**中创建对应策略版本的方案，或导入 `.vfp`。
 
-资源库支持批量选择和拖入导入。三个包分别解决不同问题，不要把资产信息包当作模型安装包，详见[交换包参考](../reference/packages.md)。
+资源库支持批量选择和拖入导入。资产库包记录植被信息，实际模型仍需在目标 DTS 场景中准备好，请同时查看资源说明中的模型来源与依赖。各类包的用途见[交换包参考](../reference/packages.md)。
 
 ::: warning 更新前先备份
 关闭 Studio，备份用户数据目录和项目目录，再更换软件。API 凭证由系统凭证存储管理，不能仅靠复制用户数据文件夹保证迁移，见[备份与更新](../reference/backup.md)。

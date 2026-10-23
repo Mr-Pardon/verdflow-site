@@ -44,7 +44,7 @@ VerdFlow 按输入数值直接处理。区域与 GeoTIFF 应处于**同一米制
 
 与 FBX 路线共用种植引导：可以直接选择 **预设方案**，也可以 **手动配置**策略与版本、植被搭配和效果参数，再生成点位。搭配支持从多个兼容资产库添加候选，切库不清空已选项。
 
-<Shot src="/media/studio-effect-example-v031.webp" alt="新版效果与预览面板，参数与策略样本并排展示" caption="0.3.1 真实组件与合成样本；示例不使用导入的地理区域或高程" />
+<Shot src="/media/studio-effect-example-v031.webp" alt="效果与预览面板，参数与策略样本并排展示" caption="真实组件与合成样本；示例不使用导入的地理区域或高程" />
 
 调参时的[效果示意](../manual/effect-preview.md)帮助比较参数；实际点位仍需对本批选区生成。保存种植方案会包含公开参数，随机种子单独设置。
 
@@ -60,7 +60,7 @@ VerdFlow 按输入数值直接处理。区域与 GeoTIFF 应处于**同一米制
 
 XYZ 偏移仅用于本次 XML，不是修正投影问题的工具。数值和坐标空间准备错误时，应回到数据源治理，而不是用一个大偏移掩盖问题。
 
-<Shot src="/media/studio-xml-output.png" alt="Studio XML 输出面板中的 XYZ 偏移输入与项目 XML 文件列表" caption="历史操作截图：两条项目路线共用输出面板；本次保留为 0 时不能生成新 XML" />
+<Shot src="/media/studio-xml-output.png" alt="Studio XML 输出面板中的 XYZ 偏移输入与项目 XML 文件列表" caption="两条项目路线共用输出面板；本次保留为 0 时不能生成新 XML" />
 
 ## 怎样确认数据可用
 

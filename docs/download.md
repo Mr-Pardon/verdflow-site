@@ -12,15 +12,15 @@ outline: false
 
 <ReleaseAccess />
 
-## 当前版本说明
+## 版本与平台
 
-本站当前对照 **0.3.1 源码基线**编写，已核验的最近 Git 标签和本地便携包为 **0.3.0**。手册版本不代表对应包已经公开发布；请按实际获得的软件及策略包核对能力，差异见[更新说明](./updates.md)。
+本手册适用于 **VerdFlow 1.0.0**。客户端为 **Windows x64 免安装便携版**，支持 DTS 实时种植，以及 FBX / 地理空间项目到 DTS XML 的输出工作流。
 
-目前主要面向 Windows 与 DTS 输出工作流，不提供其他平台安装包或尚未落地的 Blender 输出承诺。
+在 Releases 的对应版本页面选择 Windows 便携包，完整解压后运行 **VerdFlow Studio.exe**。策略包、资产库与种植方案从 [资源中心](https://mr-pardon.github.io/verdflow-resources/)获取，按各自版本和依赖导入。
 
 ## 使用前准备
 
-- DTS 实时路线需要可用 Explorer 场景和实时连接配置。
+- DTS 实时路线需要 Explorer 7.1.0730 及之后版本、可用场景和实时连接配置。
 - FBX 路线需要本机可用的 Blender。
 - 地理空间路线需要已经对齐的米制面数据与 GeoTIFF 高程。
 - 目标植被模型需要在 DTS 中实际可用；`.vfa` 不安装模型。
@@ -31,4 +31,4 @@ outline: false
 
 用户数据保存在 `%LOCALAPPDATA%\VerdFlow`，项目保存位置由创建时选择。升级前请分别备份，详见[数据备份与更新](./reference/backup.md)。
 
-近期功能与开发态差异见[更新说明](./updates.md)。
+版本能力与升级注意事项见[更新说明](./updates.md)。

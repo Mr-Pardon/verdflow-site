@@ -3,7 +3,7 @@ import { defineConfig } from 'vitepress';
 const [owner, repository] = process.env.GITHUB_REPOSITORY?.split('/') || [];
 const repositoryBase = repository && repository.toLowerCase() !== `${owner}.github.io`.toLowerCase() ? `/${repository}/` : '/';
 const base = process.env.SITE_BASE || (process.env.GITHUB_ACTIONS ? repositoryBase : '/');
-const releaseUrl = process.env.RELEASE_URL || '';
+const releaseUrl = process.env.RELEASE_URL || 'https://github.com/Mr-Pardon/VerdFlow/releases';
 if (!/^\/(?:[^?#\\]*\/)?$/.test(base)) throw new Error('SITE_BASE must start and end with /, such as /verdflow-site/.');
 if (releaseUrl && !/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/releases(?:\/|$)/.test(releaseUrl)) {
   throw new Error('RELEASE_URL must point to the verified GitHub Releases page, or be left empty.');
@@ -44,7 +44,11 @@ export default defineConfig({
       { text: '开始使用', link: '/guide/start', activeMatch: '/guide/(start|install)' },
       { text: '用户手册', link: '/manual/overview', activeMatch: '/(manual|workflows|resources|reference|strategies)/' },
       { text: '创作与扩展', link: '/authoring/overview', activeMatch: '/authoring/' },
+      { text: '资源中心', link: 'https://mr-pardon.github.io/verdflow-resources/' },
       { text: '下载与更新', link: '/download', activeMatch: '/(download|updates)' },
+    ],
+    socialLinks: [
+      { icon: 'github', link: 'https://github.com/Mr-Pardon/VerdFlow', ariaLabel: 'VerdFlow GitHub 仓库' },
     ],
     sidebar: {
       '/guide/': manualSidebar(),

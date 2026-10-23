@@ -17,13 +17,17 @@ import { ArrowUpRight, Play } from '@lucide/vue';
 
 ## 1. 连接目标场景
 
+::: info Explorer 版本要求
+实时种植当前支持 **DTS Explorer 7.1.0730 及之后版本**。更早版本不承诺兼容，请在开始前确认所用的 Explorer 版本。
+:::
+
 先在设置中配置 Explorer 根目录，详见[安装与准备](../guide/install.md)。从 Studio 的 **多源工作台 → DTS → 实时选区种植**进入，点击 **启动实时种植**。
 
-<Shot src="/media/live-workbench-session.png" alt="Studio 实时种植工作台中的服务控制、Explorer 连接状态和实时事件" caption="历史操作截图：服务已就绪、Explorer 尚未连接；继续打开 Explorer 与 WebUI 后再确认连接成功" />
+<Shot src="/media/live-workbench-session.png" alt="Studio 实时种植工作台中的服务控制、Explorer 连接状态和实时事件" caption="服务已就绪、Explorer 尚未连接；继续打开 Explorer 与 WebUI 后再确认连接成功" />
 
 等待 Explorer 打开后进入项目，打开右侧菜单栏最下面的 **WebUI**，确认面板显示“DTS Explorer 已连接”，并且目标地形已经加载。
 
-<Shot src="/media/live-explorer-panel.png" alt="DTS Explorer 场景右侧打开的 VerdFlow 快速种植面板，显示已连接状态" caption="历史场景截图：用于定位 WebUI 与连接状态；当前版本另有预设方案入口，以正文为准" />
+<Shot src="/media/live-explorer-panel.png" alt="DTS Explorer 场景右侧打开的 VerdFlow 快速种植面板，显示已连接状态" caption="在 Explorer 场景中打开 WebUI 并确认连接状态；方案配置入口见下文" />
 
 第一次使用先做一个小选区，验证植被模型名称和高程。实时写入会改变 DTS 场景；不要把大范围测试当作只读预览。
 
@@ -63,7 +67,7 @@ import { ArrowUpRight, Play } from '@lucide/vue';
 
 可以关闭不需要的用途，但至少保留一个启用用途。关闭后是否重排其他用途由当前策略版本决定，参见[内置策略](../strategies/overview.md)。
 
-<Shot src="/media/live-mapping-v031.webp" alt="0.3.1 实时植被搭配工作区，包含资产库选择、用途示意、分类搜索和已选候选" caption="0.3.1 真实实时组件与隔离演示植被，不连接或修改真实场景" />
+<Shot src="/media/live-mapping-v031.webp" alt="实时植被搭配工作区，包含资产库选择、用途示意、分类搜索和已选候选" caption="真实实时组件与隔离演示植被，不连接或修改真实场景" />
 
 点击 **仅本次应用**回到主面板，只更新本次配置。调整好构图参数后，点击主面板底部的 **保存种植方案**，在确认窗口选择更新当前方案或另存为新方案。保存包含当前全部公开参数，不再单独勾选；点击返回调整会保留草稿。
 

@@ -9,7 +9,7 @@ try {
   if (!app.server.listening) await once(app.server, 'listening');
   const { port } = app.server.address();
   process.env.SITE_URL = `http://127.0.0.1:${port}${config.site.base}`;
-  process.env.EXPECT_RELEASE_URL = process.env.RELEASE_URL || '';
+  process.env.EXPECT_RELEASE_URL = process.env.RELEASE_URL || 'https://github.com/Mr-Pardon/VerdFlow/releases';
   await import('./verify-site.mjs');
 } finally {
   app.server.closeAllConnections();

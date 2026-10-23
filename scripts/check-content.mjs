@@ -43,6 +43,7 @@ for (const file of pages) {
   const source = await readFile(file, 'utf8');
   assert.ok(!/(?:\b[A-Za-z]:[\\/]|\/(?:Users|home)\/)/i.test(source), `Local absolute path in ${file}`);
   assert.ok(!/\b(?:TODO|Lorem ipsum)\b/.test(source), `Unfinished content in ${file}`);
+  assert.ok(!/内测|尚未上传|尚待上传|待上传|源码基线|正式开源后/.test(source), `Development status in release documentation: ${file}`);
   const references = [];
   walkTokens(markdown.parse(source, {}), references);
   for (const match of source.matchAll(/(?<![:\w])(?:href|src)="([^"{}]+)"/g)) references.push(match[1]);

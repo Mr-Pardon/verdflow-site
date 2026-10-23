@@ -29,7 +29,7 @@ const steps = [
           <a class="site-button light" :href="withBase('/guide/start.html')">开始第一次种植<ArrowUpRight :size="18" /></a>
           <a class="hero-text-link" :href="withBase('/demo.html')"><Play :size="17" aria-hidden="true" />观看演示</a>
         </div>
-        <div class="hero-meta"><span>Windows 桌面内测</span><span>DTS 场景工作流</span><span>手册 0.3.1</span></div>
+        <div class="hero-meta"><span>Windows x64 便携版</span><span>DTS 场景工作流</span><span>1.0.0 用户手册</span></div>
       </div>
       <a class="hero-scroll" href="#paths" aria-label="了解种植路线"><ArrowRight :size="17" /><span>探索你的种植路线</span></a>
     </section>
@@ -51,7 +51,7 @@ const steps = [
           <div><h3>{{ steps[activeStep].heading }}</h3><p>{{ steps[activeStep].detail }}</p></div>
           <a class="section-link" :href="withBase(steps[activeStep].link)">{{ steps[activeStep].label }}<ArrowUpRight :size="17" /></a>
         </div>
-        <Shot :src="steps[activeStep].image" :alt="steps[activeStep].title + '的 VerdFlow 界面'" :caption="activeStep === 2 ? '用户提供的 Studio 历史项目预览 · 查看整体区域与植被分布' : activeStep === 1 ? '0.3.1 实时搭配工作区 · 真实组件与隔离演示植被' : '0.1.x 手动选择策略界面 · 当前支持预设方案与手动配置双入口'" />
+        <Shot :src="steps[activeStep].image" :alt="steps[activeStep].title + '的 VerdFlow 界面'" :caption="activeStep === 2 ? '用户提供的 Studio 项目预览 · 查看整体区域与植被分布' : activeStep === 1 ? '实时搭配工作区 · 真实组件与隔离演示植被' : '种植方式配置示例 · 支持预设方案与手动配置双入口'" />
       </div>
     </section>
 
@@ -60,7 +60,7 @@ const steps = [
       <div class="principle-grid">
         <article><Shuffle :size="25" /><h3>策略与植被分开</h3><p>同一种空间组织，可以搭配不同植被。一个角色，也可以按权重分配多种资产。</p><a :href="withBase('/authoring/roles.html')">理解空间角色<ArrowRight :size="15" /></a></article>
         <article><ScanLine :size="25" /><h3>按批次完成大场景</h3><p>继续种植其他区域，在点位预览中统一筛选。最终输出保留的点位，不必重做整片场景。</p><a :href="withBase('/manual/batches.html')">管理种植批次<ArrowRight :size="15" /></a></article>
-        <article><Box :size="25" /><h3>资源可以整理与复用</h3><p>管理分类、缩略图与参考半径，通过标准包交换策略、资产信息和植被搭配。</p><a :href="withBase('/reference/packages.html')">查看交换包<ArrowRight :size="15" /></a></article>
+        <article><Box :size="25" /><h3>资源可以整理与复用</h3><p>浏览现成的策略与资产库，查看版本与使用说明，也可以整理自己的资源与植被搭配。</p><a href="https://mr-pardon.github.io/verdflow-resources/" target="_blank" rel="noopener noreferrer">前往资源中心<ArrowUpRight :size="15" aria-hidden="true" /></a></article>
       </div>
     </section>
 
@@ -81,6 +81,6 @@ const steps = [
       </div>
     </section>
 
-    <section class="home-section closing-section"><span class="section-kicker">YOUR FIRST PLANTING</span><h2>下一片绿地，从这里开始。</h2><p>选一条适合你的路线，完成第一次种植。</p><div class="closing-actions"><a class="site-button solid" :href="withBase('/guide/start.html')">选择上手路线<ArrowRight :size="18" /></a><a class="site-button secondary" :href="withBase('/download.html')"><Download :size="17" />获取 VerdFlow</a></div><span class="closing-note">当前面向 Windows 内测 · 正式开源发布后提供 GitHub 下载入口</span></section>
+    <section class="home-section closing-section"><span class="section-kicker">YOUR FIRST PLANTING</span><h2>下一片绿地，从这里开始。</h2><p>选一条适合你的路线，完成第一次种植。</p><div class="closing-actions"><a class="site-button solid" :href="withBase('/guide/start.html')">选择上手路线<ArrowRight :size="18" /></a><a class="site-button secondary" :href="withBase('/download.html')"><Download :size="17" />获取 VerdFlow</a></div><span class="closing-note">VerdFlow 1.0.0 · Windows x64 免安装便携版</span></section>
   </main>
 </template>

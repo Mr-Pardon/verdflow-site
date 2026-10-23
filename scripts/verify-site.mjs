@@ -185,7 +185,7 @@ try {
   await page.locator('.VPLocalSearchBox .result').first().waitFor();
   await shot('search-desktop');
   await page.keyboard.press('Escape');
-  for (const [width, height] of [[1024, 900], [390, 844], [360, 740]]) {
+  for (const [width, height] of [[1024, 900], [900, 900], [768, 900], [390, 844], [360, 740]]) {
     await page.setViewportSize({ width, height });
     await page.goto(base); await images(); await overflow(); await brand();
     await shot(`home-${width}`);
@@ -246,13 +246,12 @@ try {
   assert.equal(new URL(page.url()).pathname, new URL(base).pathname, '404 home link lost deployment base');
   await page.goto(new URL('download.html', base).href);
   await shot('download-desktop');
-  const external = await page.locator('a[href*="github.com"]').count();
-  if (!process.env.EXPECT_RELEASE_URL) assert.equal(external, 0, 'Unconfigured release link');
-  else {
-    assert.equal(external, 1, 'Expected exactly one configured release link');
-    assert.equal(await page.getByRole('link', { name: /前往 GitHub Releases/ }).getAttribute('href'), process.env.EXPECT_RELEASE_URL);
-  }
+  const downloadCallout = page.locator('.release-callout');
+  const external = await downloadCallout.locator('a[href*="github.com"]').count();
+  assert.equal(external, 1, 'Expected exactly one release navigation link');
+  assert.equal(await downloadCallout.getByRole('heading', { name: 'VerdFlow 1.0.0', exact: true }).count(), 1);
+  assert.equal(await downloadCallout.getByRole('link', { name: /前往 GitHub Releases/ }).getAttribute('href'), process.env.EXPECT_RELEASE_URL || 'https://github.com/Mr-Pardon/VerdFlow/releases');
   assert.deepEqual(broken, []);
   assert.deepEqual(errors, []);
-  console.log(JSON.stringify({ passed: true, base, articles: pageCount, viewports: [1440, 1024, 390, 360], tested: ['navigation', 'all articles', 'internal page and section links', 'brand and favicons', 'licensing notices and canonical text', 'images', 'demo lazy loading, keyboard playback, seek, decoded frame, fullscreen, replay and retry', 'workflow image references and order', 'collapsible strategy navigation', 'strategy diagrams', 'parameter preset illustrations', 'keyboard tabs', 'lightbox', 'local search', 'mobile menu', 'sidebar', 'overflow', '404 recovery', 'honest downloads'], output: output.pathname }, null, 2));
+  console.log(JSON.stringify({ passed: true, base, articles: pageCount, viewports: [1440, 1024, 900, 768, 390, 360], tested: ['navigation', 'all articles', 'internal page and section links', 'brand and favicons', 'licensing notices and canonical text', 'images', 'demo lazy loading, keyboard playback, seek, decoded frame, fullscreen, replay and retry', 'workflow image references and order', 'collapsible strategy navigation', 'strategy diagrams', 'parameter preset illustrations', 'keyboard tabs', 'lightbox', 'local search', 'mobile menu', 'sidebar', 'overflow', '404 recovery', 'honest downloads'], output: output.pathname }, null, 2));
 } finally { await browser.close(); }
