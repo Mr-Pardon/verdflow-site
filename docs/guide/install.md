@@ -10,14 +10,16 @@ title: 安装与准备
 
 ## 获取与启动
 
-本指南适用于 **VerdFlow 1.0.0 Windows x64 便携版**。从 [GitHub Releases](https://github.com/Mr-Pardon/VerdFlow/releases)获取软件，策略与资产资源从 [VerdFlow 资源中心](https://mr-pardon.github.io/verdflow-resources/)获取。
+<ReleaseAccess />
 
-1. 在 Releases 中打开 **1.0.0** 发布页，从 **Assets** 下载 Windows x64 便携包 ZIP。
+1. 在 Releases 选择标记为 **Latest** 的正式版，从 **Assets** 下载 Windows x64 便携包，不要选源码压缩包。
 2. 将完整 ZIP 解压到一个可读写的目录，不要直接在压缩包内运行。
 3. 打开解压目录中的 **VerdFlow Studio.exe**，无需额外安装。
 4. 等待顶栏显示本地服务正常，再进入工作台或资源管理。
 
-用户数据保存在 `%LOCALAPPDATA%\VerdFlow`，种植项目则保存在你创建项目时选择的目录。软件解压目录不是项目备份目录。
+首次使用可跟随[产品引导](./first-use.md)准备推荐资源；已有配置的用户可从 **设置 → 产品引导**重新打开。应用更新入口位于 **设置 → 应用更新**，详见[备份与更新](../reference/backup.md#在应用内更新)。
+
+用户数据保存在 `%LOCALAPPDATA%\VerdFlow`，种植项目则保存在创建项目时指定的目录。软件解压目录不是项目备份目录。
 
 下载后可按发布说明中的 SHA-256 校验文件。Windows 若显示未知发布者提醒，先核对获取来源与文件校验结果，不要通过关闭系统防护来解决来源不明的文件警告。
 
@@ -25,13 +27,24 @@ title: 安装与准备
 
 | 路线 | 必需准备 | 不必为此配置 |
 | --- | --- | --- |
-| DTS 实时种植 | DTS Explorer 7.1.0730 及之后版本、可用场景与实时连接配置 | FBX、GeoTIFF |
-| FBX 模型种植 | FBX 文件、可用的 Blender 程序路径 | 在线模型服务不是必需项 |
-| 地理空间种植 | SHP / GeoJSON 面和 GeoTIFF 高程 | Blender 模型导入 |
+| [DTS 实时种植](../workflows/live.md) | DTS Explorer 7.1.0730 及之后版本、可用场景和植被模型 | Blender、在线模型服务 |
+| [FBX 模型种植](../workflows/fbx.md) | FBX 文件、可用的 Blender 程序路径 | Explorer、在线模型服务（可选） |
+| [从影像识别绿地](../workflows/imagery.md) | 同一米制投影的 RGB GeoTIFF 和单波段高程 GeoTIFF | Explorer、Blender、在线模型服务 |
+| [SHP / GeoJSON + 高程](../workflows/geospatial.md) | SHP / GeoJSON 面和配套 GeoTIFF 高程 | Explorer、Blender、在线模型服务 |
+
+**FBX 路线推荐配置在线模型服务，优先使用 AI 辅助选择绿地材质。** 它不是硬性依赖；没有可用服务时，可以使用手动选择作为备选。
+
+项目工作台生成 XML 不需要先连接 Explorer；等 XML 生成后，再用 DTS 做场景验收。已有区域面或影像可跳过首次引导的外部环境配置，从 **多源工作台 → DTS → DTS 项目工作台**选择对应输入。
+
+<Shot src="/media/studio-external-runtime-settings.png" :width="1418" :height="847" alt="Studio 设置中的产品引导、应用更新和外部运行环境，包含 Blender 程序与 Explorer 安装文件夹" caption="在设置中检查外部运行环境；图中 Blender 尚未就绪，实际本机路径已遮挡。" />
 
 ### DTS 连接
 
 在 **设置 → 外部运行环境**中配置 DTS Explorer 的根目录，并保存、检查状态。应选择同时包含 SDK 和 Explorer 程序的安装根目录，而不是只选择 exe 所在目录。
+
+<Shot src="/media/dts-explorer-root-folder.png" :width="556" :height="268" alt="Explorer 安装根目录包含 AirCityExplorer、Engine、SDK 与 Tools 文件夹" caption="选择这一层安装目录，不要只选择程序所在的 Win64 文件夹。" />
+
+若已自动发现可用的 Explorer，核对路径和状态即可，不必重复配置。
 
 ```text
 Explorer 根目录/
@@ -40,9 +53,11 @@ Explorer 根目录/
   AirCityExplorer/Binaries/Win64/DTS Explorer.exe
 ```
 
-之后进入 **多源工作台 → DTS → 实时选区种植**，点击 **启动实时种植**。Studio 会创建实时服务并启动 Explorer；等待实时面板显示 **DTS Explorer 已连接**。
+之后进入 **多源工作台 → DTS → 实时选区种植**，点击 **启动实时种植**。Explorer 启动后，可在 **偏好设置**中开启 **WebUI 控制**，启用工程右侧菜单栏的 WebUI 选项。
 
-服务不会随 Studio 自动启动。需要时可刷新状态、重建会话或停止服务；重建前先确认当前没有仍需完成的种植任务。
+<Shot src="/media/dts-explorer-webui-preferences.png" :width="755" :height="598" alt="Explorer 偏好设置中的 WebUI 控制开关，黄色方框标出了需要启用的选项" caption="在 Explorer 偏好设置中启用 WebUI 控制，再从工程右侧菜单打开面板。" />
+
+打开目标工程，在右侧菜单手动打开 **WebUI**。面板显示 **DTS Explorer 已连接**且场景地形加载完成后，即可开始选区。需要时可刷新状态、重建会话或停止服务；重建前先确认当前没有仍需完成的种植任务。
 
 连接成功不代表场景资源已经齐备。先确认地形可以正常浏览，植被搭配中的目标模型名称能在该 DTS 场景中使用。
 
@@ -50,34 +65,22 @@ Explorer 根目录/
 
 在设置中指定本机可用的 Blender 可执行文件。FBX 检查、绿地提取和相关高程处理需要它；不要假设便携包已经包含 Blender。
 
+已自动发现的可用 Blender 无需重复设置。侧栏中的 Blender 工作台是规划入口，不等于已提供 Blender 场景内的完整种植功能。
+
 ### 可选模型服务
 
-模型服务用于辅助 FBX 材质分类，不负责运行种植策略。没有 API 配置，也可以手动确认材质分类并完成种植；DTS 实时和地理空间路线不需要为生成点位配置模型服务。
-
-1. 打开侧栏 **运行 → 模型服务**，选择已有内置模板并进入配置。
-2. 填写 API Key。已有密钥时输入框不会回显原值；留空表示保留现有密钥。
-3. 在 **使用模型**中填写服务实际支持的模型 ID。模板不固定默认模型；支持模型发现的服务可点击 **获取模型**，首次配置时按钮为 **保存密钥并获取**。
-4. 点击 **保存配置**，再通过列表中的 **测试连接**检查当前服务与模型是否可用。
-5. 回到 FBX 流程使用材质分析，人工审阅分类后再提取绿地。
-
-模型列表只是辅助选择，不是可用性保证。服务没有列表、模型未列出或获取失败时，仍可手动填写正确的模型 ID；测试失败时检查协议、端点、密钥权限和模型名称。
-
-使用团队网关时可新建自定义服务，配置协议、API 端点和可选的模型发现端点。内置模板的协议与端点只读，需要不同端点时使用自定义服务。
-
-外部模型服务可能接收任务所需的材质资料，请先确认数据允许发送到该服务。API Key 由本机系统凭证存储管理；删除自定义服务配置不会同时删除密钥，需要时先单独删除已配置密钥。
+在线模型服务只用于辅助 FBX 材质分类，推荐在使用 FBX 路线前配置并测试，见 [FBX 模型服务配置](../workflows/fbx.md#可选-配置模型服务)。没有可用服务时可手动选择；影像识别使用便携包内置的本地推理，不需要这项配置。
 
 ## 先准备一套资源
 
-前往 [VerdFlow 资源中心](https://mr-pardon.github.io/verdflow-resources/)查找种植策略、资产库和种植方案。先阅读资源的用途、版本与依赖说明，再下载需要的资源包；使用种植方案时，也要准备它所依赖的策略和资产。
+推荐从[获取第一套资源](./first-use.md)开始，跟随引导一键导入，或从资源中心按需挑选。导入后仍要确认策略信任，并按详情准备配套 DTS 模型。
 
-下载完成后，回到 Studio 按以下顺序导入：
-
-1. 在策略库导入 `.vfs` 策略包，审阅来源并确认信任。
-2. 在资产库导入 `.vfa`，或新建资产库并录入目标模型名称。
-3. 在 **快捷种植 → 种植方案**中创建对应策略版本的方案，或导入 `.vfp`。
-
-资源库支持批量选择和拖入导入。资产库包记录植被信息，实际模型仍需在目标 DTS 场景中准备好，请同时查看资源说明中的模型来源与依赖。各类包的用途见[交换包参考](../reference/packages.md)。
+自带资源包或离线时，再走[手动导入](../reference/packages.md#批量导入)；也可以从[资源中心](https://mr-pardon.github.io/verdflow-resources/)下载后导入。**资产库不包含 DTS 模型。** 是否需要配套 PAK、如何获取，以资产详情为准。
 
 ::: warning 更新前先备份
 关闭 Studio，备份用户数据目录和项目目录，再更换软件。API 凭证由系统凭证存储管理，不能仅靠复制用户数据文件夹保证迁移，见[备份与更新](../reference/backup.md)。
 :::
+
+## 回到快速开始
+
+[返回第 1 步：安装并检查环境](./start.md#install)，然后继续准备第一套种植资源。

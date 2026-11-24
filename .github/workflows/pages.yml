@@ -25,12 +25,10 @@ jobs:
       - run: npm run build
         env:
           SITE_BASE: ${{ vars.SITE_BASE }}
-          RELEASE_URL: ${{ vars.RELEASE_URL }}
       - run: npx playwright install --with-deps chromium
       - run: npm run test:build
         env:
           SITE_BASE: ${{ vars.SITE_BASE }}
-          RELEASE_URL: ${{ vars.RELEASE_URL }}
       - uses: actions/upload-pages-artifact@v4
         with:
           path: docs/.vitepress/dist

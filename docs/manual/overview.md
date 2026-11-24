@@ -11,26 +11,29 @@ description: 按操作目标浏览 VerdFlow 的种植、资源管理与输出指
 
 ## 刚开始使用
 
-先[选择上手路线](../guide/start.md)，再完成[安装与准备](../guide/install.md)。策略、角色和植被搭配的关系，集中解释在[三个核心概念](./concepts.md)。
+从[第一次种植](../guide/start.md)开始：按手边的数据选路线，完成安装和资源准备，再做一次小范围验证。需要理解策略、角色和植被搭配时，再看[三个核心概念](./concepts.md)。
 
 ## 完成一次种植
 
 <div class="guide-links">
-  <a href="../workflows/live.html">在 DTS 场景中直接种植 <span>绘制 / 导入选区，采样并写入场景</span></a>
+  <a href="../workflows/live.html">在 DTS 场景中直接种植 <span>用面选区或绘制路径，采样并写入场景</span></a>
   <a href="../workflows/fbx.html">从 FBX 模型提取绿地 <span>按材质提取区域，再预览与输出</span></a>
   <a href="../workflows/geospatial.html">从 SHP / GeoJSON 与高程开始 <span>使用已经对齐的米制面数据与 GeoTIFF</span></a>
+  <a href="../workflows/imagery.html">从影像识别绿地 <span>复核 RGB GeoTIFF 识别结果，再进入种植</span></a>
+  <a href="../workflows/workbench.html">工作台区域已就绪，继续种植 <span>选方案、预览点位、分批完成并输出 XML</span></a>
   <a href="./batches.html">分多批完成一个场景 <span>继续种植，筛选点位，重新种植某一批</span></a>
   <a href="./output.html">输出与保存 XML <span>合并保留点位，设置偏移，保留输出文件</span></a>
 </div>
 
-## 了解内置策略
+## 了解常用策略
 
-侧栏的 **内置策略**可以折叠。先从[如何选择策略](../strategies/overview.md)比较三种组织方式，再查看[层次生态群落](../strategies/community.md)、[草坪点景组团](../strategies/lawn.md)和[通用行道树](../strategies/street-trees.md)的用途示意、参数与调节建议。
+侧栏的 **常用策略**可以折叠。先从[如何选择策略](../strategies/overview.md)比较分布方式；有开放折线需求时，另看[沿线树池种植](../strategies/path-planters.md)，不要与需要绿带面的通用行道树混用。
 
 ## 整理可复用的资源
 
 | 我想做什么 | 阅读 |
 | --- | --- |
+| 在 Studio 查找资源、查看版本和依赖、确认导入 | [Studio 内置资源中心](../resources/center.md) |
 | 给植被添加分类、缩略图和参考尺寸 | [资产库与分类](../resources/assets.md) |
 | 保存策略、植被搭配与完整公开参数 | [种植方案](../resources/mixes.md) |
 | 在固定样本上比较参数与植被尺度 | [效果示意](./effect-preview.md) |
@@ -47,4 +50,4 @@ description: 按操作目标浏览 VerdFlow 的种植、资源管理与输出指
 
 [输入数据检查](../reference/data.md)用于排除格式与坐标问题；[常见问题](../reference/troubleshooting.md)按症状提供排查顺序；[备份与更新](../reference/backup.md)说明用户数据与项目数据的区别。
 
-<div class="version-note">本手册适用于 VerdFlow 1.0.0。策略、资产库与种植方案各自管理版本，使用前请核对资源说明与依赖；版本能力与升级说明见更新说明。</div>
+<div class="version-note">本手册以 VerdFlow 1.3.0 为基线。策略、资产库与种植方案各自管理版本，使用前请核对资源说明与依赖；版本能力与升级说明见更新说明。</div>

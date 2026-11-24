@@ -16,12 +16,28 @@ CC BY 4.0 授权。具体许可与授权范围按逐项来源说明处理，未�
 | `landscape-hero.webp` | 本次通过内置 ImageGen 生成，白天公园中的乔木、灌木、草坪与曲线路径 | AI 空间种植概念图，不是 VerdFlow / DTS 运行成果 |
 | `studio-strategies.webp` | 当前本地 Studio 的真实 `PlantingStage.vue`，隔离演示数据 | 不是私人生产项目，版本与角色按 2.1.0 示例整理 |
 | `studio-mixes.webp` | 同一组件的植被搭配步骤 | 示例资源名称，不保证目标场景存在，未使用外部植被图片 |
+| `studio-resource-center.webp` | 用户提供的裁切版 Studio 资源中心截图 | 首页和「获取第一套资源」共用；不固定宣称资源数量 |
+| `studio-recommended-resource-import.webp` | 用户提供的首次引导推荐资源导入截图 | 用于「获取第一套资源」；较短的清单窗口保留了「全部导入」按钮，清单不是固定内容 |
+| `studio-imagery-region-selection.webp` | 用户提供的 Studio 影像项目截图 | 影像指南与共用工作台指南复用，展示区域选择；不是点位预览或合成图 |
+| `studio-geospatial-region-selection.webp` | 用户补充在地理空间指南中的 `workflows/image.png` | 显示区域选择与已占用面，画面已有种植批次，不是首次导入的空白项目 |
+| `studio-parameter-effect-preview.webp` | 用户补充在工作台指南中的 `workflows/image-1.png` | 参数与策略固定样本效果示意，不是当前项目选区的生成结果 |
+| `studio-point-preview-detail.webp` | 用户补充在工作台指南中的 `workflows/image-2.png` | 展示具体点位、参考范围和图例；不据图中点位数量作性能承诺 |
+| `studio-imagery-extraction-review.webp` | 用户补充在影像指南中的 `image.png` | 展示识别复核、最小区域和留白；原图归档至忽略的维护目录，示例数值不作为统一推荐 |
+| `live-region-selection.webp` | 用户在实时种植指南补充的 DTS 场景截图 | 显示多个贴地选区与列表控件，原 PNG 归档至忽略的维护目录；不据此承诺容量或执行性能 |
+| `dts-region-selection-overview.webp` | 用户提供的 `DTS区域选择.png` | 上一版首页第二步的 DTS 俯视选区图；已归档至 `.work/retired-home-media/`，不发布 |
+| `studio-region-selection-aligned.webp`、`dts-region-selection-aligned.webp` | 用户提供的工作台截图，以及从 Explorer 场景调整正北俯视距离后截取的实际画面 | 旧版首页第二步左右图，已由四条路线截图替代；旧图归档至 `.work/retired-home-media/`，不发布 |
+| `home-region-live.webp` | 用户提供的 DTS Explorer 实拍（图 4） | 首页「确认种植区域」与实时种植指南共用；原构图未裁，保留场景、拾取绿地与选区面板 |
+| `home-region-fbx.webp`、`home-region-imagery.webp`、`home-region-shp.webp` | 用户提供的 Studio 实拍（依次为图 2、图 1、图 3） | 首页「确认种植区域」工作台路线。裁去原项目标题栏，页面使用统一的路径示例名称；其余工作台画面保留，不把截图中的面积、数量或配置当作产品承诺 |
+| `studio-external-runtime-settings.png` | 用户补充在安装页的 Studio 设置截图 | 保留运行环境状态，遮挡实际本机路径；未处理原图留在忽略的维护目录 |
+| `dts-explorer-root-folder.png` | 用户补充的 Explorer 根目录截图 | 保留原图已做的遮挡，展示 SDK 与 AirCityExplorer 应在同一安装根目录 |
+| `dts-explorer-webui-preferences.png` | 用户补充的 Explorer 偏好设置截图 | 黄色框标记 WebUI 控制开关，公开副本沿用原图 |
+| `dts-demo-preset-result.webp` | 已公开演示 `dts-live-demo.mp4` 的 13 秒画面 | 上一版首页落地效果示例；旧图归档至 `.work/retired-home-media/`，不发布 |
+| `dts-planting-after.webp`、`dts-planting-before.webp` | 用户提供的同一 DTS Explorer 场景种植前后截图 | 首页「看落地效果」对照，种植后在左；统一按 16:9 裁掉菜单与罗盘，校正两图 2 像素的纵向偏移，不改动场景内容。原图存于 `.work/planting-result/` |
 | `studio-effects.webp` | 同一组件的效果参数步骤 | 仅展示真实界面，非参数性能评测 |
-| `studio-preview.webp` | 真实 `PointReviewStage.vue` 与 Canvas，合成区域和点位 | 界面演示，不是策略算法效果或性能证明 |
 | `studio-role-mapping.webp` | 真实 `PlantingStage.vue` 与角色配置组件 | 示例搭配与两个角色，不代替所有策略的角色定义 |
 | `studio-asset-picker.webp` | 真实植被选择弹窗 | 示例名称、分类与默认占位图，无第三方植被图片 |
-| `studio-regions.webp` | 真实 `RegionStage.vue` 与选区 Canvas | 合成区域，不是实际 FBX 提取成果 |
 | `studio-create-geospatial.webp` | 真实 `DtsGeospatialCreateDialog.vue` | 示范区域、高程文件名与项目目录，不含私人路径 |
+| `studio-create-fbx.webp`、`studio-create-imagery.webp` | 真实 `DtsCreateDialog.vue` / `DtsGeospatialCreateDialog.vue`，由 `scripts/capture-input-guide-ui.mjs` 隔离采集 | 示例文件名、未选保存位置的创建状态；FBX 采用 AI 辅助、演示服务与模型 ID，关闭自动确认；不执行 API、真实任务或场景命令，不修改产品源码 |
 | `studio-create-catalog.webp` | 真实 `CreateAssetCatalogDialog.vue` | 示例名称与标识，未创建真实资产库 |
 | `studio-asset-editor.webp` | 真实 `AssetCatalogEditor.vue` | 演示资产、参考半径和缩放，未保存真实库 |
 | `studio-output.webp` | 真实 `CompositionOutputStage.vue` | 演示 XML 列表与偏移，不执行真实生成或文件删除 |
@@ -47,7 +63,7 @@ CC BY 4.0 授权。具体许可与授权范围按逐项来源说明处理，未�
 | `studio-region-selection.png` | `workflows/image-4.png` | 两条项目路线共用的区域选择操作；不作为特定输入格式的提取结果证明 |
 | `studio-point-preview.png` | `workflows/image-5.png` | 两条项目路线共用的批次与植被图例预览 |
 | `studio-xml-output.png` | `workflows/image-6.png` | 共用 XML 输出面板与文件留档；截图中本次预览计数为零，不能据此解释生成条件 |
-| `studio-point-preview-overview.png` | `media/studio-preview.png` | 用户补充的整体区域点位预览，用于首页与多批次手册；不是隔离演示数据 |
+| `studio-point-preview-overview.png` | `media/studio-preview.png` | 用户补充的整体区域点位预览，用于多批次手册；不是隔离演示数据 |
 
 文档使用 `/media/<用途名称>.png` 引用，通过 `Shot` 组件处理部署 base 与点击放大。
 跨路线共用图片只保留一份，不复制为 FBX、GeoJSON 等多个版本。
@@ -95,6 +111,23 @@ DTS 场景桥接替换为桩，未匹配请求会导致检查失败。
 旧 `studio-role-mapping.webp`、`studio-effects.webp`、`studio-asset-editor.webp` 与
 `live-mapping.webp` 保留为早期界面素材；本次更新的章节引用新版图，不将旧图标成当前界面。
 
+## 1.0.0 界面同步
+
+2026-10-23 对照产品当前 1.0.0 工作区，以真实 Vue 组件补拍以下素材。
+原有 0.3.1 素材保留其实际采集记录，不重标版本；首页和实时指南改用新版搭配工作区。
+
+| 文件 | 来源与用途 |
+| --- | --- |
+| `live-mapping-v100.webp` | 当前 `MappingWorkspace` 与共用 `AssetBrowser`，两个隔离示例库、包内原用途说明和两项候选；不执行保存、生成或 DTS 命令 |
+| `studio-multi-catalog-search.webp` | 同一组件的检索范围展开状态，说明多库勾选与来源展示；未配置缩略图，保留真实占位图 |
+| `studio-first-use-guide.webp` | 当前 `FirstUseGuide` 欢迎页，仅提供隔离引导状态，不修改实际引导进度 |
+| `studio-application-updates.webp` | 当前 `ApplicationUpdates` 与隔离 1.0.0 初始状态，不声称存在新版，也未执行在线检查或下载 |
+
+复现命令为 `node scripts/capture-release-ui.mjs`。脚本仅解析已核对的策略 YAML，
+不执行算法；优先复用 `STUDIO_URL`，否则自行启动并关闭只供本次采集的 Studio Vite。
+浏览器阻断全部业务 API 请求，采集成功要求实际业务请求、产品写入和场景命令均为零。
+公开 WebP 放在 media，原始 PNG 位于被忽略的 `.work/release-ui/`。
+
 ## 实时种植演示视频
 
 2026-10-22 用户要求将 README 使用的公开版录屏托管到用户手册，并新增“看见 VerdFlow”页面。
@@ -135,11 +168,20 @@ node scripts/prepare-media.mjs
 
 正式发布时可以换成拥有展示权限的真实成果图；届时同时更新图片来源、页内标注和本登记。
 
+## 实时配置流程图
+
+实时种植指南使用 `LiveConfigurationFlow.vue`，沿用核心概念图的浅色节点与图标，
+用分叉和汇合细线展示预设与手动两条路径，再汇入选区与种植；效果示意以辅助说明呈现。
+图中文字可检索，窄屏可横向查看。
+这是一张操作关系图，不是产品截图或实际运行状态。
+先前的五张截图与拼图维护稿保存在被忽略的 `.work/live-panel-guide/`，不再发布为手册配图。
+安装设置的未遮挡原图保存在 `.work/install-sources/`，不进入公开站点。
+
 ## 发布前素材检查
 
 用户已补充部分真实操作截图。以下内容仍需在公开前确认展示权限；不从私人项目或同事模型中自行提取更多素材：
 
-- 首页已使用 `studio-point-preview-overview.png` 替换原合成区域预览，发布前确认整体区域与植被信息的展示权限；原 `studio-preview.webp` 保留为隔离演示素材。
+- 多批次手册使用 `studio-point-preview-overview.png` 展示整体区域与植被，发布前确认展示权限。工作台新增三张操作图的原 PNG 归档至忽略的 `.work/user-workflow-sources/`；原 `studio-preview.webp` 与 `studio-regions.webp` 已移除，不恢复发布。
 - FBX 的模型检查与绿地材质选择步骤：已收到用户补充的操作图，发布前核对其中模型与材质名称的展示权限；可另补首次提取的正常状态。
 - DTS 场景中的贴地选区与最终种植成果：已收到场景与实时面板图，最终种植效果图仍可补充；发布前隐藏不宜公开的服务、项目和路径信息。
 - 资产缩略图：使用具有公开展示权限的植被模型预览图，不能直接搬用私人库中的图片。

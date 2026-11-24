@@ -2,7 +2,7 @@
 import { ArrowDown, ArrowRight, ScanLine, Sprout, Trees, Mountain, FileOutput } from '@lucide/vue';
 
 const stages = [
-  { title: '统一区域', question: '种在哪里', result: '区域集', icon: ScanLine, color: '#3e7395' },
+  { title: '准备几何', question: '种在哪里', result: '区域集或路径', icon: ScanLine, color: '#3e7395' },
   { title: '策略生成', question: '怎样分布', result: '带角色的点位', icon: Sprout, color: '#756184' },
   { title: '植被分配', question: '使用什么', result: '具体资产与缩放', icon: Trees, color: '#277d69' },
   { title: '高程采样', question: '落在多高', result: '地形高度', icon: Mountain, color: '#547887' },
@@ -34,12 +34,12 @@ const stages = [
     <div class="workflow-integrations">
       <span class="workflow-label">外部适配</span>
       <dl>
-        <div><dt>区域</dt><dd><span>FBX / SHP / GeoJSON</span><span>DTS 选区</span></dd></div>
+        <div><dt>几何</dt><dd><span>FBX / SHP / GeoJSON</span><span>RGB 影像、DTS 选区</span></dd></div>
         <div><dt>高程</dt><dd><span>模型几何 / GeoTIFF</span><span>DTS 场景</span></dd></div>
         <div><dt>交付</dt><dd><span>DTS XML</span><span>实时场景写入</span></dd></div>
       </dl>
     </div>
-    <figcaption>操作入口可以不同，区域、点位与任务遵循共同约定。</figcaption>
+    <figcaption>操作入口可以不同，输入几何、点位与任务遵循共同约定。</figcaption>
   </figure>
 </template>
 

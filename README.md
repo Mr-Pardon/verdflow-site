@@ -6,10 +6,10 @@ VerdFlow 的独立官网与中文使用指南。产品源码、ADR 与内部验�
 [文档反馈](https://github.com/Mr-Pardon/verdflow-site/issues) ·
 [部署状态](https://github.com/Mr-Pardon/verdflow-site/actions/workflows/pages.yml)
 
-本站按 **VerdFlow 1.0.0 正式发布版**维护，公开页面说明产品使用方式，不展示内部上传进度或开发阶段记录。
+本站以 **VerdFlow 1.3.0** 为手册基线，公开页面说明产品使用方式，不展示内部上传进度或开发阶段记录。
 源码对照、素材采集与实际发布核验记录保留在维护文档中。
-`docs/strategies/` 介绍层次生态群落 2.2.2、草坪点景组团 1.0.2、通用行道树 2.0.2。
-统一种植方案、动态效果示例与跨库搭配已同步；素材依据见 `ASSET_REGISTER.md` 和 `CONTENT_GUIDE.md`。
+`docs/strategies/` 介绍层次生态群落 2.2.2、草坪点景组团 1.0.2、通用行道树 2.1.1、沿线树池种植 1.0.0。
+内置资源中心、首次引导、影像识别、实时沿线种植与绿地构件提取已同步；素材依据见 `ASSET_REGISTER.md` 和 `CONTENT_GUIDE.md`。
 
 ## 本地运行
 
@@ -28,8 +28,8 @@ npm run dev
 npm run dev:lan
 ```
 
-该命令监听 `0.0.0.0`，其他设备通过 `http://<本机局域网IP>:4180/` 访问。
-端口已占用时会自动尝试其他可用端口，以终端输出的实际地址为准。
+该命令监听 `0.0.0.0` 的固定端口 `4184`，其他设备通过 `http://<本机局域网IP>:4184/` 访问。
+这是支持热更新的开发服务，日常文档和样式修改无需重启或更换端口。若端口已有服务，先关闭占用它的旧预览。
 仅在可信局域网中使用，无法访问时检查 Windows 防火墙是否允许该开发服务。
 
 ```powershell
@@ -120,16 +120,13 @@ npm run test:build
 重新构建一次，避免本地生产目录保留子路径产物。仅想查看生产结果时可手动运行
 `node node_modules/vitepress/bin/vitepress.js preview docs --port 4181`。
 
-可在仓库 Actions Variables 中配置：
-
-| 变量 | 用途 |
-| --- | --- |
-| `RELEASE_URL` | 覆盖客户端发布页面，默认使用产品仓库的 GitHub Releases 列表 |
-| `SITE_BASE` | 覆盖部署 base，默认从仓库名推导 |
+可通过仓库 Actions 变量 `SITE_BASE` 覆盖部署路径，默认从仓库名推导。
+「安装与准备」和「下载与更新」共用 [VerdFlow Releases 列表](https://github.com/Mr-Pardon/VerdFlow/releases)，
+产品发布新版本后无需再改下载地址。
 
 公开仓库为 [Mr-Pardon/verdflow-site](https://github.com/Mr-Pardon/verdflow-site)，默认站点地址为
 `https://mr-pardon.github.io/verdflow-site/`，暂不使用自定义域名。`main` 推送后自动构建部署，
-每次运行结果见上方部署状态。下载页默认进入产品 Releases 列表，也可通过变量指定具体发布页；不拼接未经核验的安装包附件地址。
+每次运行结果见上方部署状态。更新手册基线时同步核对下载页和安装指引；不拼接未经核验的安装包附件地址。
 后续发布继续核对版本、素材、下载地址和截图，详见 `CONTENT_GUIDE.md` 与
 [发布检查清单](./RELEASE_CHECKLIST.md)。
 GitHub Actions 在上传 Pages 产物前也执行生产浏览器回归；失败不会进入部署步骤。

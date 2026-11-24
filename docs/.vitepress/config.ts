@@ -3,11 +3,7 @@ import { defineConfig } from 'vitepress';
 const [owner, repository] = process.env.GITHUB_REPOSITORY?.split('/') || [];
 const repositoryBase = repository && repository.toLowerCase() !== `${owner}.github.io`.toLowerCase() ? `/${repository}/` : '/';
 const base = process.env.SITE_BASE || (process.env.GITHUB_ACTIONS ? repositoryBase : '/');
-const releaseUrl = process.env.RELEASE_URL || 'https://github.com/Mr-Pardon/VerdFlow/releases';
 if (!/^\/(?:[^?#\\]*\/)?$/.test(base)) throw new Error('SITE_BASE must start and end with /, such as /verdflow-site/.');
-if (releaseUrl && !/^https:\/\/github\.com\/[\w.-]+\/[\w.-]+\/releases(?:\/|$)/.test(releaseUrl)) {
-  throw new Error('RELEASE_URL must point to the verified GitHub Releases page, or be left empty.');
-}
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -25,7 +21,6 @@ export default defineConfig({
     ['link', { rel: 'apple-touch-icon', href: `${base}media/verdflow-apple-touch-icon.png`, sizes: '180x180' }],
   ],
   vite: {
-    define: { __RELEASE_URL__: JSON.stringify(releaseUrl) },
     plugins: [{
       name: 'verdflow:local-search-hmr',
       apply: 'serve',
@@ -41,8 +36,7 @@ export default defineConfig({
     siteTitle: false,
     nav: [
       { text: '产品', link: '/' },
-      { text: '开始使用', link: '/guide/start', activeMatch: '/guide/(start|install)' },
-      { text: '用户手册', link: '/manual/overview', activeMatch: '/(manual|workflows|resources|reference|strategies)/' },
+      { text: '快速开始', link: '/guide/start', activeMatch: '/(guide|manual|workflows|resources|reference|strategies)/' },
       { text: '创作与扩展', link: '/authoring/overview', activeMatch: '/authoring/' },
       { text: '资源中心', link: 'https://mr-pardon.github.io/verdflow-resources/' },
       { text: '下载与更新', link: '/download', activeMatch: '/(download|updates)' },
@@ -70,7 +64,7 @@ export default defineConfig({
         { text: '继续阅读', items: [
           { text: '交换包参考', link: '/reference/packages' },
           { text: '策略库与信任', link: '/resources/strategies' },
-          { text: '回到用户手册', link: '/manual/overview' },
+          { text: '回到快速开始', link: '/guide/start' },
         ] },
       ],
     },
@@ -101,26 +95,31 @@ export default defineConfig({
 function manualSidebar() {
   return [
     { text: '从这里开始', items: [
-      { text: '手册概览', link: '/manual/overview' },
-      { text: '选择你的上手路线', link: '/guide/start' },
+      { text: '快速开始', link: '/guide/start' },
       { text: '安装与准备', link: '/guide/install' },
+      { text: '获取第一套资源', link: '/guide/first-use' },
       { text: '三个核心概念', link: '/manual/concepts' },
+      { text: '手册概览', link: '/manual/overview' },
     ] },
     { text: '完成一次种植', items: [
       { text: 'DTS 实时种植', link: '/workflows/live' },
       { text: 'FBX 模型种植', link: '/workflows/fbx' },
+      { text: '从影像识别绿地', link: '/workflows/imagery' },
       { text: 'SHP / GeoJSON + 高程', link: '/workflows/geospatial' },
+      { text: '工作台种植流程', link: '/workflows/workbench' },
       { text: '调参时查看效果示意', link: '/manual/effect-preview' },
       { text: '多批次与点位预览', link: '/manual/batches' },
       { text: '输出 XML 与坐标偏移', link: '/manual/output' },
     ] },
-    { text: '内置策略', collapsed: true, items: [
+    { text: '常用策略', collapsed: true, items: [
       { text: '如何选择策略', link: '/strategies/overview' },
       { text: '层次生态群落', link: '/strategies/community' },
       { text: '草坪点景组团', link: '/strategies/lawn' },
       { text: '通用行道树', link: '/strategies/street-trees' },
+      { text: '沿线树池种植', link: '/strategies/path-planters' },
     ] },
     { text: '管理种植资源', items: [
+      { text: 'Studio 内置资源中心', link: '/resources/center' },
       { text: '资产库与分类', link: '/resources/assets' },
       { text: '种植方案与植被搭配', link: '/resources/mixes' },
       { text: '策略库与信任', link: '/resources/strategies' },
