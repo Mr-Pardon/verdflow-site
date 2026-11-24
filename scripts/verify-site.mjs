@@ -94,14 +94,30 @@ try {
     try {
       await preview.clock.install();
       await preview.goto(base);
+      await preview.bringToFront();
+      await preview.waitForFunction(() => document.visibilityState === 'visible');
+      await preview.mouse.move(4, 100);
       await preview.getByRole('tab', { name: '确认种植区域' }).evaluate(button => button.click());
       const tabs = preview.getByRole('tablist', { name: '确认区域的方式' });
       const active = tabs.getByRole('tab', { selected: true });
       const current = () => active.textContent();
       const tick = () => preview.clock.fastForward(6100);
-      const show = () => tabs.evaluate(element => {
-        element.scrollIntoView({ block: 'start', behavior: 'instant' });
-        return new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+      const show = () => preview.locator('.region-routes').evaluate(element => {
+        element.scrollIntoView({ block: 'center', behavior: 'instant' });
+        // IntersectionObserver delivers separately from animation frames.
+        return new Promise((resolve, reject) => {
+          const timeout = window.setTimeout(() => {
+            observer.disconnect();
+            reject(new Error('The route carousel did not enter the viewport'));
+          }, 5000);
+          const observer = new IntersectionObserver(([entry]) => {
+            if (entry.intersectionRatio < 0.25) return;
+            window.clearTimeout(timeout);
+            observer.disconnect();
+            resolve(true);
+          }, { threshold: 0.25 });
+          observer.observe(element);
+        });
       });
 
       await tick();
