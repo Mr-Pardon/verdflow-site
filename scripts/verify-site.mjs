@@ -198,7 +198,7 @@ try {
   assert.ok(hero.width >= 1438 && hero.x < 1, 'Hero is not full bleed');
   assert.equal(await page.locator('.hero-inner h1').evaluate(element => getComputedStyle(element).fontSize), '88px');
   await heroSpacing();
-  assert.match(await page.locator('.hero-meta').innerText(), /1\.3\.0 用户手册/);
+  assert.match(await page.locator('.hero-meta').innerText(), /1\.3\.1 用户手册/);
   assert.deepEqual(await page.locator('.site-home > section').evaluateAll(sections => sections.slice(1, 3).map(section => section.id)), ['planting-plan', 'paths']);
   assert.equal(await page.locator('.hero-scroll').getAttribute('href'), '#planting-plan');
   assert.equal(await page.locator('.VPNavBar').getByRole('link', { name: '资源中心', exact: true }).getAttribute('href'), 'https://mr-pardon.github.io/verdflow-resources/');
@@ -328,6 +328,9 @@ try {
       assert.deepEqual(await page.locator('.shot-trigger img[src$="live-region-selection.webp"]').evaluate(img => [img.naturalWidth, img.naturalHeight]), [1920, 1080]);
       const liveGuide = await page.locator('.vp-doc').innerText();
       for (const step of ['本页流程：', '选择种植方案', '完成标志：', '仅选失败项', '不会擦除已种植的植被', 'Explorer 中保存工程']) assert.ok(liveGuide.includes(step), `Missing live workflow instruction: ${step}`);
+      const brushGuide = await page.locator('.vp-doc table').filter({ hasText: '调整笔刷大小' }).innerText();
+      for (const operation of ['滚轮向上放大笔刷、向下缩小', '编辑时按中键', '右键进入漫游', 'Shift 刷选', 'Ctrl 刷除', 'Alt 切换']) assert.ok(brushGuide.includes(operation), `Missing 1.3.1 brush operation: ${operation}`);
+      assert.match(liveGuide, /由 VerdFlow 启动的 Windows 版 DTS Explorer.*场景获得焦点/);
       const headings = (await page.locator('.vp-doc h2, .vp-doc h3').allTextContents()).map(value => value.replaceAll('\u200b', '').trim());
       assert.ok(headings.indexOf('确认写入并保存工程') < headings.indexOf('复用选区'), 'Finish scene verification and saving before optional workflows');
       assert.equal(await page.locator('.vp-doc').getByRole('link', { name: '开始种植', exact: true }).getAttribute('href'), '#_5-调整效果并开始种植');

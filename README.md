@@ -6,7 +6,7 @@ VerdFlow 的独立官网与中文使用指南。产品源码、ADR 与内部验�
 [文档反馈](https://github.com/Mr-Pardon/verdflow-site/issues) ·
 [部署状态](https://github.com/Mr-Pardon/verdflow-site/actions/workflows/pages.yml)
 
-本站以 **VerdFlow 1.3.0** 为手册基线，公开页面说明产品使用方式，不展示内部上传进度或开发阶段记录。
+本站以 **VerdFlow 1.3.1** 为手册基线，公开页面说明产品使用方式，不展示内部上传进度或开发阶段记录。
 源码对照、素材采集与实际发布核验记录保留在维护文档中。
 `docs/strategies/` 介绍层次生态群落 2.2.2、草坪点景组团 1.0.2、通用行道树 2.1.1、沿线树池种植 1.0.0。
 内置资源中心、首次引导、影像识别、实时沿线种植与绿地构件提取已同步；素材依据见 `ASSET_REGISTER.md` 和 `CONTENT_GUIDE.md`。

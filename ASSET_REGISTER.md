@@ -26,7 +26,7 @@ CC BY 4.0 授权。具体许可与授权范围按逐项来源说明处理，未�
 | `live-region-selection.webp` | 用户在实时种植指南补充的 DTS 场景截图 | 显示多个贴地选区与列表控件，原 PNG 归档至忽略的维护目录；不据此承诺容量或执行性能 |
 | `dts-region-selection-overview.webp` | 用户提供的 `DTS区域选择.png` | 上一版首页第二步的 DTS 俯视选区图；已归档至 `.work/retired-home-media/`，不发布 |
 | `studio-region-selection-aligned.webp`、`dts-region-selection-aligned.webp` | 用户提供的工作台截图，以及从 Explorer 场景调整正北俯视距离后截取的实际画面 | 旧版首页第二步左右图，已由四条路线截图替代；旧图归档至 `.work/retired-home-media/`，不发布 |
-| `home-region-live.webp` | 用户提供的 DTS Explorer 实拍（图 4） | 首页「确认种植区域」与实时种植指南共用；原构图未裁，保留场景、拾取绿地与选区面板 |
+| `home-region-live.webp` | 用户提供的 DTS Explorer 实拍（图 4） | 首页「确认种植区域」与实时种植指南共用；保留拾取绿地与选区面板。图中的滚轮提示对应 1.3.0 操作，不适用于 1.3.1 |
 | `home-region-fbx.webp`、`home-region-imagery.webp`、`home-region-shp.webp` | 用户提供的 Studio 实拍（依次为图 2、图 1、图 3） | 首页「确认种植区域」工作台路线。裁去原项目标题栏，页面使用统一的路径示例名称；其余工作台画面保留，不把截图中的面积、数量或配置当作产品承诺 |
 | `studio-external-runtime-settings.png` | 用户补充在安装页的 Studio 设置截图 | 保留运行环境状态，遮挡实际本机路径；未处理原图留在忽略的维护目录 |
 | `dts-explorer-root-folder.png` | 用户补充的 Explorer 根目录截图 | 保留原图已做的遮挡，展示 SDK 与 AirCityExplorer 应在同一安装根目录 |

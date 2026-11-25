@@ -43,7 +43,7 @@ const steps = [
           <a class="site-button light" :href="withBase('/guide/start.html')">开始第一次种植<ArrowUpRight :size="18" /></a>
           <a class="hero-text-link" :href="withBase('/demo.html')"><Play :size="17" aria-hidden="true" />观看演示</a>
         </div>
-        <div class="hero-meta"><span>Windows x64 便携版</span><span>DTS 场景工作流</span><span>1.3.0 用户手册</span></div>
+        <div class="hero-meta"><span>Windows x64 便携版</span><span>DTS 场景工作流</span><span>1.3.1 用户手册</span></div>
       </div>
       <a class="hero-scroll" href="#planting-plan"><ArrowRight :size="17" aria-hidden="true" /><span>查看种植流程</span></a>
     </section>

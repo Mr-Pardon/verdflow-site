@@ -9,7 +9,7 @@ const routes = [
     id: 'live', label: '实时种植', icon: MousePointer2,
     file: 'home-region-live.webp', width: 1914, height: 1079,
     alt: 'DTS 实时种植面板的拾取绿地、绘制与导入工具，及场景中高亮的种植范围',
-    caption: 'DTS 实拍：在场景中绘制选区、拾取绿地或导入 SHP，再确认本次种植范围。',
+    caption: 'DTS 实拍：在场景中绘制选区、拾取绿地或导入 SHP。图中笔刷提示为旧版，操作以指南为准。',
   },
   {
     id: 'fbx', label: '模型材质提取', icon: FileBox, project: 'FBX 模型材质提取',
