@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 看见 VerdFlow
-description: 从选区到场景植被，看一次完整的 DTS 实时种植流程。49 秒真实操作演示。
+description: 从拾取绿地、编辑选区到场景植被，观看 DTS 实时种植的真实操作演示。
 sidebar: false
 outline: false
 ---

@@ -43,13 +43,13 @@ onBeforeUnmount(() => {
   <main class="demo-page" aria-labelledby="demo-title">
     <header class="demo-intro">
       <h1 id="demo-title">看见 VerdFlow</h1>
-      <p>从选区到场景植被，看一次完整的实时种植流程。</p>
+      <p>从拾取绿地、编辑选区，到植被落地，看一次完整的 DTS 实时种植流程。</p>
     </header>
 
     <figure class="demo-film" aria-labelledby="demo-film-title">
       <figcaption class="demo-film-heading">
         <h2 id="demo-film-title">DTS 实时种植演示</h2>
-        <span><span class="demo-time">49</span> 秒</span>
+        <span><span class="demo-time">61</span> 秒</span>
       </figcaption>
       <div class="demo-player" :aria-busy="waiting">
         <video
@@ -62,7 +62,7 @@ onBeforeUnmount(() => {
           width="1920"
           height="1080"
           :tabindex="activated ? 0 : -1"
-          aria-label="DTS 实时种植演示，49 秒"
+          aria-label="DTS 实时种植演示，61 秒"
           @playing="waiting = false"
           @waiting="waiting = true"
           @pause="waiting = false"

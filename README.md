@@ -80,8 +80,8 @@ README 的观看入口统一指向 [看见 VerdFlow](https://mr-pardon.github.io
 播放器按点击加载 MP4，使用原生进度、音量与全屏控制，不自动播放。媒体与页面一起部署，
 不依赖第三方播放器或 Git LFS；路径经过 `withBase`，兼容项目 Pages 与本地根路径。
 
-`dts-live-demo.mp4` 为约 49 秒、1080p / 30 fps 的 H.264 + AAC 网页副本（约 31 MiB），
-原始录屏不放入仓库。真实成果封面为 `dts-live-demo-poster.webp`，来源与转换参数见
+`dts-live-demo.mp4` 为约 61 秒、1080p / 60 fps 的 H.264 + AAC 网页副本，展示拾取绿地、编辑选区和植被落地。
+原始录屏不放入仓库。成果封面为 `dts-live-demo-poster.webp`，来源与转换参数见
 `ASSET_REGISTER.md`。替换视频时同步核对页面时长、分辨率与浏览器回归断言。
 产品 README 由产品仓库单独维护；本仓库只提供稳定的演示页地址。
 指南中的演示链接使用同窗口原生导航，避免 VitePress 1.x 文档目录的延迟滚动回调

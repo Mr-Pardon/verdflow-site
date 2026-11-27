@@ -18,7 +18,7 @@ import LiveConfigurationFlow from '../.vitepress/theme/LiveConfigurationFlow.vue
 
 **本页流程：连接场景 → 选择种植方案 → 准备选区 → 开始种植 → 检查并保存工程。** 实时路线使用 DTS 场景中的地形采样高度，无需另选高程 TIF。
 
-<a class="guide-demo-link" :href="withBase('/demo.html')" target="_self"><Play :size="16" aria-hidden="true" />先看完整演示 · 49 秒<ArrowUpRight :size="16" aria-hidden="true" /></a>
+<a class="guide-demo-link" :href="withBase('/demo.html')" target="_self"><Play :size="16" aria-hidden="true" />先看完整演示 · 61 秒<ArrowUpRight :size="16" aria-hidden="true" /></a>
 
 ## 1. 连接目标场景
 

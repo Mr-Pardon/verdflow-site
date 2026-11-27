@@ -31,7 +31,7 @@ CC BY 4.0 授权。具体许可与授权范围按逐项来源说明处理，未�
 | `studio-external-runtime-settings.png` | 用户补充在安装页的 Studio 设置截图 | 保留运行环境状态，遮挡实际本机路径；未处理原图留在忽略的维护目录 |
 | `dts-explorer-root-folder.png` | 用户补充的 Explorer 根目录截图 | 保留原图已做的遮挡，展示 SDK 与 AirCityExplorer 应在同一安装根目录 |
 | `dts-explorer-webui-preferences.png` | 用户补充的 Explorer 偏好设置截图 | 黄色框标记 WebUI 控制开关，公开副本沿用原图 |
-| `dts-demo-preset-result.webp` | 已公开演示 `dts-live-demo.mp4` 的 13 秒画面 | 上一版首页落地效果示例；旧图归档至 `.work/retired-home-media/`，不发布 |
+| `dts-demo-preset-result.webp` | 旧版实时种植演示的 13 秒画面 | 上一版首页落地效果示例；旧图归档至 `.work/retired-home-media/`，不发布 |
 | `dts-planting-after.webp`、`dts-planting-before.webp` | 用户提供的同一 DTS Explorer 场景种植前后截图 | 首页「看落地效果」对照，种植后在左；统一按 16:9 裁掉菜单与罗盘，校正两图 2 像素的纵向偏移，不改动场景内容。原图存于 `.work/planting-result/` |
 | `studio-effects.webp` | 同一组件的效果参数步骤 | 仅展示真实界面，非参数性能评测 |
 | `studio-role-mapping.webp` | 真实 `PlantingStage.vue` 与角色配置组件 | 示例搭配与两个角色，不代替所有策略的角色定义 |
@@ -130,16 +130,17 @@ DTS 场景桥接替换为桩，未匹配请求会导致检查失败。
 
 ## 实时种植演示视频
 
-2026-10-22 用户要求将 README 使用的公开版录屏托管到用户手册，并新增“看见 VerdFlow”页面。
-来源为用户提供的 `VerdFlow植被流程-公开版.mp4`，原片约 49.09 秒、2560 x 1440 / 60 fps、
-127 MiB。仅将网页播放副本与成果封面放入 `docs/public/media/`，不复制原片或本地来源路径。
-录屏展示真实 DTS 实时种植操作及场景结果，不代表 FBX / 地理数据路线的操作演示，
+“看见 VerdFlow”页面最初使用 2026-10-22 提供的 `VerdFlow植被流程-公开版.mp4`。
+2026-11-27 更换为用户提供的 `VerdFlow绿地提取.mp4` 与其配套成果封面，保留原页面地址。
+新原片约 60.67 秒、1920 x 1080 / 60 fps、111 MiB；仓库仅保留网页播放副本和封面。
+录屏展示 DTS 中的拾取绿地、编辑选区、植被生成与场景结果。原片部分步骤已加速，不代表实际执行耗时。
+它不代表 FBX / 地理数据路线的操作演示，
 也不作为所有地形、资产或性能表现的承诺。用户请求用于公开站点不等同于授予第三方素材开放许可。
 
 | 文件 | 来源与处理 |
 | --- | --- |
-| `dts-live-demo.mp4` | 整段原片等比转为 1920 x 1080 / 30 fps；H.264 CRF 22、slow、yuv420p，保留 AAC 音轨；清除来源元数据并启用 MP4 faststart；约 31 MiB，无剪辑、裁切或变速 |
-| `dts-live-demo-poster.webp` | 复用产品 README 于 2026-10-22 更新的 `demo-dts-live.webp`，为作者指定的滨水公园与摩天轮成果封面，1920 x 1080；本次原样复制，保留原有“效果演示”文字；不再使用早期第 46 秒抽帧 |
+| `dts-live-demo.mp4` | 1920 x 1080 / 60 fps；H.264 CRF 22、fast、yuv420p，视频峰值码率 6300 kb/s，保留原 AAC 音轨；移除来源元数据，启用 MP4 faststart；保留原片全部画面和时序 |
+| `dts-live-demo-poster.webp` | 用户指定的滨水园区成果封面 `VerdFlow绿地提取 - frame at 0m51s.jpg`；转换为 WebP，1920 x 1080，未裁切、未加字 |
 
 网页视频使用点击加载与浏览器原生播放控件；首页和指南只链接演示页，不预加载视频。
 替换素材时需核对展示权限、完整时长、原始比例及 `scripts/verify-demo.mjs` 的媒体断言。

@@ -12,6 +12,8 @@ export async function verifyDemo({ page, base, shot, overflow, exercise = false 
     const play = page.getByRole('button', { name: '播放 DTS 实时种植演示', exact: true });
     const video = page.locator('.demo-player video');
     await play.waitFor();
+    assert.equal(await page.locator('.demo-time').textContent(), '61');
+    assert.equal(await video.getAttribute('aria-label'), 'DTS 实时种植演示，61 秒');
     await overflow();
     assert.equal(await page.locator('.VPSidebar').count(), 0, 'Demo should not show the manual sidebar');
     assert.equal(await page.locator('.VPNavBar').isVisible(), true);
@@ -52,14 +54,14 @@ export async function verifyDemo({ page, base, shot, overflow, exercise = false 
     }));
     assert.equal(metadata.width, 1920);
     assert.equal(metadata.height, 1080);
-    assert.ok(metadata.duration > 49 && metadata.duration < 50, 'Expected complete 49 second recording');
+    assert.ok(Math.abs(metadata.duration - 60.67) < 0.1, 'Expected the complete green-space extraction recording');
     assert.equal(metadata.controls, true);
     assert.equal(metadata.focused, true, 'Focus should move from the poster to native player controls');
     assert.ok(videoRequests.length > 0);
-    await video.evaluate(element => { element.pause(); element.currentTime = 46; });
+    await video.evaluate(element => { element.pause(); element.currentTime = 54; });
     await page.waitForFunction(() => {
       const video = document.querySelector('.demo-player video');
-      return video && !video.seeking && video.currentTime >= 46 && video.readyState >= 2;
+      return video && !video.seeking && video.currentTime >= 54 && video.readyState >= 2;
     });
     const colors = await video.evaluate(element => {
       const canvas = document.createElement('canvas');
@@ -84,7 +86,7 @@ export async function verifyDemo({ page, base, shot, overflow, exercise = false 
     });
     await next.getByRole('link', { name: '阅读实时种植指南' }).click();
     await page.getByRole('heading', { level: 1, name: /^DTS 实时种植/ }).waitFor();
-    const guideLink = page.getByRole('link', { name: '先看完整演示 · 49 秒', exact: true });
+    const guideLink = page.getByRole('link', { name: '先看完整演示 · 61 秒', exact: true });
     assert.equal(await guideLink.getAttribute('href'), new URL('demo.html', base).pathname);
     await guideLink.click();
     await play.waitFor();
